@@ -1,30 +1,19 @@
+import React from 'react';
 import logo from './logo.svg';
+import Componente from "./components/Componente";
 import './App.css';
+import Propiedades from './components/Propiedades';
+
 
 function App() {
-  let nombre = "Rosario";
-  let auth = true;
-  let estaciones = ["Primavera", "Verano", "Otoño", "Invierno"]
   return (
-    <>
     <div className="App">
       <header className="App-header">
+        <section>
         <img src={logo} className="App-logo" alt="logo" />
-        <label htmlFor="nombre">Nombre</label>
-        <input type="text" id="nombre"/>
-        <h1>{nombre}</h1>
-        <p>
-          {auth ?"El usuario está logueado":"El usuario no está logueado"}
-        </p>
-        <p>{2+1}</p>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <ul>
-          {estaciones.map((el, index) => (
-          <li key={index}>{el}</li>
-          ))}
-        </ul>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -33,10 +22,22 @@ function App() {
         >
           Learn React
         </a>
+        </section>
+        <section>
+        <Componente msg="Hola soy un componente funcional expresado desde una prop"/>
+        <hr/>
+        <Propiedades cadena= "Esto es una cadena de texto" 
+        numero={19} 
+        booleano={true}
+        arreglo={[1,2,3]}
+        objeto={{nombre:"Rosario", correo:"rosariogorosito428@gmail.com"}}
+        elementoReact={<i>Esto es un elemento React</i>}
+        componenteReact={<Componente msg="Soy un componente pasado como Prop"/>}
+        funcion={(num) => num * num}
+        />
+      </section>
       </header>
     </div>
-    <div></div>
-    </>
   );
 }
 
