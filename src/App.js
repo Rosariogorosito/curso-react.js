@@ -1,9 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import Componente from "./components/Componente";
-import './App.css';
 import Propiedades from './components/Propiedades';
-
+import Estado from './components/Estado';
+import './App.css';
 
 function App() {
   return (
@@ -31,10 +31,14 @@ function App() {
         booleano={true}
         arreglo={[1,2,3]}
         objeto={{nombre:"Rosario", correo:"rosariogorosito428@gmail.com"}}
-        elementoReact={<i>Esto es un elemento React</i>}
-        componenteReact={<Componente msg="Soy un componente pasado como Prop"/>}
         funcion={(num) => num * num}
+        elementoReact={<i>Esto es un elemento React</i>}
+        componenteReact={
+        <Componente msg="Soy un componente pasado como Prop"/>
+        }
         />
+        <hr/>
+        <Estado/>
       </section>
       </header>
     </div>
